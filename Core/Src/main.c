@@ -91,12 +91,34 @@ void loop() {
 
 		HAL_Delay(150);
 
+
+		//Just screwing around....
 		clearScreen(Black);
+		ssd1306_UpdateScreen();
+
 		writeLargeFont(0, 2, White, "OLED");
 		writeMedFont(75, 2, White, "Pgm");
 		writeSmFont(0, 30, White, "Initializing...");
 		writeTinyFont(50, 45, White, " /_(-_~)_/ ");
+
+		HAL_Delay(150);
+
+		// with the ssd lib
+		ssd1306_Fill(White);
+		ssd1306_UpdateScreen();
+
+		ssd1306_SetCursor(10, 2);
+		ssd1306_WriteString("OLED", Font_16x26, Black);
+		ssd1306_SetCursor(85, 2);
+		ssd1306_WriteString("Pgm", Font_11x18, Black);
+		ssd1306_SetCursor(10, 30);
+		ssd1306_WriteString("Initializing...", Font_7x10, Black);
+		ssd1306_SetCursor(40, 45);
+		ssd1306_WriteString(" /_(-_~)_/ ", Font_6x8, Black);
+
+		ssd1306_UpdateScreen();
 		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
     }
 
 	// Blink an LED
