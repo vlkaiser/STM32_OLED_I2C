@@ -85,7 +85,9 @@ void loop() {
 		//HAL_Delay(150);
 
 		//ssd1306_TestAll();
-		ssd1306_drawLightningArrow();
+		//ssd1306_drawLightningArrow();
+		drawBitmap(7, 20, (uint8_t *)JaktoolLogoBMP, JaktoolLogoWidth, JaktoolLogoHeight, White, Black);
+
 
 		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
     }
