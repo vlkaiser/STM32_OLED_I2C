@@ -56,8 +56,8 @@ all: main-build
 main-build: OLED_I2C.elf secondary-outputs
 
 # Tool invocations
-OLED_I2C.elf: $(OBJS) $(USER_OBJS) C:\Users\vkaiser\Documents\_LocalRepo\_STM32\Module_Development\OLED_SPI\STM32F072RBTX_FLASH.ld
-	arm-none-eabi-gcc -o "OLED_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\Module_Development\OLED_SPI\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OLED_I2C.map" -Wl,--gc-sections -static -L"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\_Libraries\stm32-ssd1306" -L"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\_Libraries\BitmapLibrary" --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+OLED_I2C.elf: $(OBJS) $(USER_OBJS) C:\Users\vkaiser\Documents\_LocalRepo\_STM32\Module_Development\OLED_I2C\STM32F072RBTX_FLASH.ld
+	arm-none-eabi-gcc -o "OLED_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\Module_Development\OLED_I2C\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OLED_I2C.map" -Wl,--gc-sections -static -L"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\_Libraries\stm32-ssd1306" -L"C:\Users\vkaiser\Documents\_LocalRepo\_STM32\_Libraries\BitmapLibrary" --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
