@@ -25,6 +25,7 @@
 #include "ssd1306_tests.h"
 #include <stdbool.h>
 #include <BitmapLibrary.h>
+#include "OLED.h"
 
 /* USER CODE END Includes */
 
@@ -88,7 +89,13 @@ void loop() {
 		//ssd1306_drawLightningArrow();
 		drawBitmap(7, 20, (uint8_t *)JaktoolLogoBMP, JaktoolLogoWidth, JaktoolLogoHeight, White, Black);
 
+		HAL_Delay(150);
 
+		clearScreen(Black);
+		writeLargeFont(0, 2, White, "OLED");
+		writeMedFont(75, 2, White, "Pgm");
+		writeSmFont(0, 30, White, "Initializing...");
+		writeTinyFont(50, 45, White, " /_(-_~)_/ ");
 		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
     }
 

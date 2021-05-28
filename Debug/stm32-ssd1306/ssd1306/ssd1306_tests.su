@@ -6,5 +6,4 @@ ssd1306_tests.c:109:6:ssd1306_TestRectangle	32	static
 ssd1306_tests.c:119:6:ssd1306_TestCircle	16	static
 ssd1306_tests.c:129:6:ssd1306_TestArc	16	static
 ssd1306_tests.c:135:6:ssd1306_TestPolyline	32	static
-ssd1306_tests.c:154:6:ssd1306_JaktoolSplashScreen	8	static
-ssd1306_tests.c:159:6:ssd1306_TestAll	8	static
+ssd1306_tests.c:155:6:ssd1306_TestAll	8	static

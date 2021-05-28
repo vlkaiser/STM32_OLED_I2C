@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/OLED.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f0xx_hal_msp.c \
 ../Core/Src/stm32f0xx_it.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../Core/Src/system_stm32f0xx.c 
 
 OBJS += \
+./Core/Src/OLED.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f0xx_hal_msp.o \
 ./Core/Src/stm32f0xx_it.o \
@@ -20,6 +22,7 @@ OBJS += \
 ./Core/Src/system_stm32f0xx.o 
 
 C_DEPS += \
+./Core/Src/OLED.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f0xx_hal_msp.d \
 ./Core/Src/stm32f0xx_it.d \
@@ -29,6 +32,8 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
+Core/Src/OLED.o: ../Core/Src/OLED.c
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m0 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F072xB -DDEBUG -c -I../Core/Inc -I"C:/Users/vkaiser/Documents/_LocalRepo/_STM32/_Libraries/BitmapLibrary" -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -IC:/Users/vkaiser/Documents/_LocalRepo/_STM32/_Libraries/stm32-ssd1306/ssd1306 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 Core/Src/main.o: ../Core/Src/main.c
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m0 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F072xB -DDEBUG -c -I../Core/Inc -I"C:/Users/vkaiser/Documents/_LocalRepo/_STM32/_Libraries/BitmapLibrary" -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -IC:/Users/vkaiser/Documents/_LocalRepo/_STM32/_Libraries/stm32-ssd1306/ssd1306 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 Core/Src/stm32f0xx_hal_msp.o: ../Core/Src/stm32f0xx_hal_msp.c

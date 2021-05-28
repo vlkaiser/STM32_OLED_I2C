@@ -1,0 +1,5 @@
+OLED.c:27:6:writeLargeFont	40	static
+OLED.c:47:6:writeMedFont	40	static
+OLED.c:67:6:writeSmFont	40	static
+OLED.c:87:6:writeTinyFont	40	static
+OLED.c:96:6:clearScreen	16	static
